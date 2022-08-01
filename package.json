@@ -1,5 +1,6 @@
 {
   "name": "flow-search-npm",
+  "type": "module",
   "scripts": {
     "dev": "tsnd src/index.ts",
     "build": "tsc"
@@ -11,6 +12,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "flow-launcher-helper": "^1.0.0",
     "open": "^8.4.0"
   }
 }
