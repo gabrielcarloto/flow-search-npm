@@ -3,14 +3,14 @@ lockfileVersion: 5.4
 specifiers:
   '@types/node': ^18.0.6
   axios: ^0.27.2
-  flow-launcher-helper: ^1.0.0
+  flow-launcher-helper: ^1.0.2
   open: ^8.4.0
   ts-node-dev: ^2.0.0
   typescript: ^4.7.4
 
 dependencies:
   axios: 0.27.2
-  flow-launcher-helper: 1.0.1
+  flow-launcher-helper: 1.0.2
   open: 8.4.0
 
 devDependencies:
@@ -192,8 +192,8 @@ packages:
       to-regex-range: 5.0.1
     dev: true
 
-  /flow-launcher-helper/1.0.1:
-    resolution: {integrity: sha512-sWwTkzvsIt2wF81cFAa8VRcnLzsmdjwYMtk5ET8cOt4JLHtCV4xggbv5WgW05MQPHB9VabxRUgqUvZnkFx8a9w==}
+  /flow-launcher-helper/1.0.2:
+    resolution: {integrity: sha512-5RWS3rJSaTNhKbi09m6jF0rdvkBWh4mpnVd432etOrc5NHG4YXceCEJCprVFP6sRHz0YZsEtk1/WKmvapYLhVg==}
     dev: false
 
   /follow-redirects/1.15.1:
