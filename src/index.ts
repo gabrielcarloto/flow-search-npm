@@ -1,6 +1,6 @@
 import open from 'open';
 import axios from 'axios';
-import { flow, JSONRPCResponse } from 'flow-launcher-helper';
+import { Flow, JSONRPCResponse } from 'flow-launcher-helper';
 import { api } from './api.js';
 
 interface GetPackagesResponse {
@@ -20,7 +20,9 @@ interface GetPackagesResponse {
   };
 }
 
-const { params, showResult, on, run } = flow('app.png');
+type Methods = 'open_result';
+
+const { params, showResult, on, run } = new Flow<Methods>('app.png');
 
 on('query', async () => {
   if (params.length <= 1) {
@@ -36,7 +38,7 @@ on('query', async () => {
       },
     });
 
-    const results: JSONRPCResponse[] = [];
+    const results: JSONRPCResponse<Methods>[] = [];
 
     data.results.forEach(({ package: result }) => {
       results.push({
