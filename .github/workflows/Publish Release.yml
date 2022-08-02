@@ -24,10 +24,18 @@ jobs:
           path: 'plugin.json'
           prop_path: 'Version'
       - run: echo ${{steps.version.outputs.prop}}
-      - name: Install dependencies
+      - name: Install and Build
         run: |
-          npm install
-          zip -r Flow.Launcher.Plugin.SearchNPM.zip . -x '*.git*'
+          pnpm install --frozen-lockfile
+          pnpm build
+      - name: Remove node_modules
+        uses: JesseTG/rm@v1.0.2
+        with:
+          path: node_modules
+      - name: Install prod
+        run: pnpm i -P
+      - name: Pack
+        run: zip -r Flow.Launcher.Plugin.SearchNPM.zip . -x '*.git*'
       - name: Publish
         uses: softprops/action-gh-release@v1
         with:
