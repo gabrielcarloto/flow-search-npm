@@ -13,14 +13,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: pnpm/action-setup@v2.2.2
-        with:
-          version: 7
       - name: Set up Node.Js
         uses: actions/setup-node@v2
         with:
-          node-version: '17.3.0'
-          cache: 'pnpm'
+          node-version: '16.16.0'
       - name: get version
         id: version
         uses: notiz-dev/github-action-json-property@release
@@ -30,14 +26,14 @@ jobs:
       - run: echo ${{steps.version.outputs.prop}}
       - name: Install and Build
         run: |
-          pnpm install --frozen-lockfile
-          pnpm build
+          npx pnpm@7 install --frozen-lockfile
+          npx pnpm@7 build
       - name: Remove node_modules
         uses: JesseTG/rm@v1.0.2
         with:
           path: node_modules
       - name: Install prod
-        run: pnpm i -P
+        run: npx pnpm@7 i -P
       - name: Pack
         run: zip -r Flow.Launcher.Plugin.SearchNPM.zip . -x '*.git*'
       - name: Publish
