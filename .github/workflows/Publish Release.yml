@@ -26,14 +26,14 @@ jobs:
       - run: echo ${{steps.version.outputs.prop}}
       - name: Install and Build
         run: |
-          npx pnpm@7 install --frozen-lockfile
-          npx pnpm@7 build
+          npm ci
+          npm run build
       - name: Remove node_modules
         uses: JesseTG/rm@v1.0.2
         with:
           path: node_modules
       - name: Install prod
-        run: npx pnpm@7 i -P
+        run: npm i --omit=dev
       - name: Pack
         run: zip -r Flow.Launcher.Plugin.SearchNPM.zip . -x '*.git*'
       - name: Publish
