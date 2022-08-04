@@ -4,7 +4,7 @@
   "Name": "Search npm",
   "Description": "Search npm packages",
   "Author": "Gabriel Carloto",
-  "Version": "1.0.1",
+  "Version": "1.0.2",
   "Language": "executable",
   "Website": "https://github.com/gabrielcarloto/flow-search-npm",
   "ExecuteFileName": "run.bat",
