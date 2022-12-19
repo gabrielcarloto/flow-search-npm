@@ -24,7 +24,7 @@ type Methods = 'open_result';
 
 const { showResult, on, run } = new Flow<Methods>('app.png');
 
-on<string>('query', async (params) => {
+on('query', async (params: string) => {
   if (params.length <= 1) {
     return showResult({
       title: 'Waiting for query...',
@@ -61,7 +61,7 @@ on<string>('query', async (params) => {
   }
 });
 
-on<string>('open_result', (params) => {
+on('open_result', (params: string) => {
   const url = params;
   open(url);
 });
