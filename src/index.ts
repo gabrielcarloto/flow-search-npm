@@ -22,9 +22,9 @@ interface GetPackagesResponse {
 
 type Methods = 'open_result';
 
-const { params, showResult, on, run } = new Flow<Methods>('app.png');
+const { showResult, on, run } = new Flow<Methods>('app.png');
 
-on('query', async () => {
+on<string>('query', async (params) => {
   if (params.length <= 1) {
     return showResult({
       title: 'Waiting for query...',
@@ -61,7 +61,7 @@ on('query', async () => {
   }
 });
 
-on('open_result', () => {
+on<string>('open_result', (params) => {
   const url = params;
   open(url);
 });
