@@ -4,9 +4,9 @@
   "Name": "Search npm",
   "Description": "Search npm packages",
   "Author": "Gabriel Carloto",
-  "Version": "1.0.2",
-  "Language": "executable",
+  "Version": "1.0.3",
+  "Language": "typescript",
   "Website": "https://github.com/gabrielcarloto/flow-search-npm",
-  "ExecuteFileName": "run.bat",
+  "ExecuteFileName": "./build/index.js",
   "IcoPath": "app.png"
 }
