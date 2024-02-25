@@ -5,7 +5,7 @@ import { api } from './api.js';
 
 interface GetPackagesResponse {
   data: {
-    results: [
+    objects: [
       {
         package: {
           name: string;
@@ -34,13 +34,13 @@ on('query', async () => {
   try {
     const { data }: GetPackagesResponse = await api.get('/search', {
       params: {
-        q: params,
+        text: params,
       },
     });
 
     const results: JSONRPCResponse<Methods>[] = [];
 
-    data.results.forEach(({ package: result }) => {
+    data.objects.forEach(({ package: result }) => {
       results.push({
         title: `${result.name} | v${result.version}`,
         subtitle: result.description,

@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'https://api.npms.io/v2',
+  baseURL: 'https://registry.npmjs.com/-/v1',
 });
